@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Valley Obgyn</title>
+
+    <link rel="stylesheet" href="asset/css/bootstrap.min.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="asset/css/main.css" />
+
+    <script src="asset/js/jquery.min.js"></script>
+    <script src="asset/js/popper.min.js"></script>
+    <script src="asset/js/bootstrap.min.js"></script>
+  </head>
+
+  <body>
+    <div id="root">
+      <section id="wrapper">
+        <section class="common-sec login-page-sec">
+          <div class="container">
+            <div class="login-form-dv">
+              <section class="custom-form-sec">
+                <form class="icon-form" name="loginForm">
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <div class="input-bx pass-bx">
+                        <input
+                          type="password"
+                          name="password"
+                          id="password"
+                          class="form-control"
+                          autocomplete="off"
+                          required
+                          placeholder="Password"
+                        />
+                      </div>
+                    </div>
+                    <!-- col -->
+                  </div>
+                  <!-- row -->
+
+                  <div class="submit mt-4">
+                    <button type="submit" class="custom-btn round-btn">
+                      Login
+                    </button>
+                    <div
+                      style="color: red; margin-top: 1.5rem; text-align: center"
+                      id="error"
+                    ></div>
+                  </div>
+                </form>
+              </section>
+              <!-- custom-form-sec -->
+            </div>
+            <!-- login-form-dv -->
+          </div>
+          <!-- container -->
+        </section>
+        <!-- common-sec -->
+      </section>
+      <!-- wrapper -->
+
+      <div style="display: none" id="loading">
+        <div class="spinner">
+          <div class="rect1"></div>
+          <div class="rect2"></div>
+          <div class="rect3"></div>
+          <div class="rect4"></div>
+          <div class="rect5"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="asset/js/user.js"></script>
+  </body>
+</html>

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>My Office</title>
+    <link rel="stylesheet" href="asset/css/bootstrap.min.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="asset/css/main.css" />
+
+    <script src="asset/js/jquery.min.js"></script>
+    <script src="asset/js/popper.min.js"></script>
+    <script src="asset/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <section id="wrapper">
+      <header class="site-header">
+        <div class="container-fluid">
+          <nav class="navbar site-navigation">
+            <div class="navbar-brand">
+              <a href="#">
+                <img src="asset/img/client-Valley-Logo.svg" alt="Logo" />
+              </a>
+            </div>
+
+            <ul class="navbar-nav">
+              <li>
+                <a href="#">
+                  <span class="icon"
+                    ><img src="asset/img/logout.png" alt="LogOut"
+                  /></span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <!-- container -->
+      </header>
+
+      <main class="site-main">
+        <section>
+          <h1
+            style="
+              font-size: 1.3rem;
+              color: #004a7f;
+              font-weight: 500;
+              text-align: center;
+            "
+          >
+            Employee Referral Program
+          </h1>
+
+          <h2
+            style="
+              text-align: center;
+              font-size: 1.5rem;
+              font-weight: 600;
+              color: #004a7f;
+              margin-top: 2.3rem;
+            "
+          >
+            Earn $100 when someone you refer is hired!
+          </h2>
+
+          <div style="text-align: center; width: 90%; margin: 1.8rem auto">
+            Our employees are our greatest asset, as they provide patients with
+            unparalleled, high-quality care. By fostering an environment that
+            encourages our staff to bring in top talent, we can only benefit as
+            a team. Our commitment to excellence in patient care is unwavering.
+            By participating in this program, you will not only be helping us
+            grow our team, but you will also be rewarded for your efforts.
+          </div>
+
+          <div style="text-align: center; width: 90%; margin: auto">
+            Simply enter your friend's name, email/phone number in the form
+            below and hit send. Your friend will be notified. Once your friend
+            is hired you will receive the reward.
+          </div>
+        </section>
+        <section class="user-sms-form-sec">
+          <div class="container-fluid">
+            <form name="userHomeForm" class="user-sms-form-wrapp">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="mdl-input-bx">
+                    <label>Your Name</label>
+                    <input
+                      type="text"
+                      name="name"
+                      id="name"
+                      class="form-control"
+                      autocomplete="off"
+                      required
+                      placeholder="Copy &amp; paste only"
+                    />
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="mdl-input-bx">
+                    <label>Friend's Name</label>
+                    <input
+                      type="text"
+                      name="friendName"
+                      id=""
+                      class="form-control"
+                      autocomplete="off"
+                      required=""
+                      placeholder="Copy &amp; paste only"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="mdl-input-bx">
+                    <label>Email</label>
+                    <input
+                      type="text"
+                      name="email"
+                      id=""
+                      class="form-control"
+                      autocomplete="off"
+                      placeholder="Copy &amp; paste only"
+                    />
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="mdl-input-bx">
+                    <label>Phone Number</label>
+                    <input
+                      type="text"
+                      name="phone"
+                      id=""
+                      class="form-control"
+                      autocomplete="off"
+                      placeholder="Copy &amp; paste only"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <button
+                type="submit"
+                class="custom-btn text-uppercase"
+                style="min-width: 180px"
+              >
+                Send
+              </button>
+
+              <div
+                style="color: red; margin-top: 1.5rem; text-align: center"
+                id="error"
+              ></div>
+            </form>
+          </div>
+          <!-- container -->
+        </section>
+        <!-- common-sec -->
+      </main>
+    </section>
+    <!-- wrapper -->
+
+    <!-- Modal Thank you Success message -->
+    <div
+      class="modal fade custom-modal success-modal"
+      id="submitModal"
+      tabindex="-1"
+      role="dialog"
+      aria-hidden="true"
+    >
+      <div
+        class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
+        role="document"
+      >
+        <div class="modal-content">
+          <div class="modal-header">
+            <button
+              type="button"
+              class="close ml-auto"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body text-center">
+            <div class="img mb-4">
+              <img src="./asset/img/verified.png" alt="Success" />
+            </div>
+            <h3 class="modal-title text-center">Thank You!</h3>
+            <p>Successfully Sent</p>
+          </div>
+          <!-- modal-body -->
+        </div>
+      </div>
+    </div>
+    <!-- modal -->
+
+    <div style="display: none" id="loading">
+      <div class="spinner">
+        <div class="rect1"></div>
+        <div class="rect2"></div>
+        <div class="rect3"></div>
+        <div class="rect4"></div>
+        <div class="rect5"></div>
+      </div>
+    </div>
+  </body>
+</html>
