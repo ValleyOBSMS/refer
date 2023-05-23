@@ -32,10 +32,10 @@ function userHomeLoad() {
   let error = document.getElementById("error");
   let loading = document.getElementById("loading");
 
-  form["name"].oninput = inputPrevent;
-  form["friendName"].oninput = inputPrevent;
-  form["email"].oninput = inputPrevent;
-  form["phone"].oninput = inputPrevent;
+  // form["name"].oninput = inputPrevent;
+  // form["friendName"].oninput = inputPrevent;
+  // form["email"].oninput = inputPrevent;
+  // form["phone"].oninput = inputPrevent;
 
   form.addEventListener("submit", (e) => {
     e.preventDefault();
