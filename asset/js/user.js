@@ -144,7 +144,7 @@ function loginLoad() {
       .then((data) => {
         if (data.message === "success") {
           /** fetch user-home */
-          fetch("../../user-home.html")
+          fetch("./user-home.html")
             .then((res) => res.text())
             .then((res) => {
               let data = res.substring(
