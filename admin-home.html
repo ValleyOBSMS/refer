@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>My Office</title>
+
+    <link rel="stylesheet" href="asset/css/bootstrap.min.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="asset/css/main.css" />
+
+    <script src="asset/js/jquery.min.js"></script>
+    <script src="asset/js/popper.min.js"></script>
+    <script src="asset/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <section id="wrapper">
+      <header class="site-header">
+        <div class="container-fluid">
+          <nav class="navbar site-navigation">
+            <div class="navbar-brand">
+              <a href="#">
+                <img src="asset/img/client-Valley-Logo.svg" alt="Logo" />
+              </a>
+            </div>
+
+            <div class="search-dv">
+              <form name="searchForm" id="search_form">
+                <button type="submit">
+                  <img src="asset/img/search-icon.png" alt="Search" />
+                </button>
+                <input
+                  type="text"
+                  name="search"
+                  id="search"
+                  placeholder="Search"
+                />
+              </form>
+              <span class="ic-dv arrow-ic">
+                <a href="#">
+                  <img src="asset/img/up-dwn-arr.png" alt="Icon" />
+                </a>
+              </span>
+            </div>
+
+            <ul class="navbar-nav">
+              <li>
+                <a href="#" class="active">
+                  <span class="icon">
+                    <img
+                      src="asset/img/share-clock.png"
+                      alt="History"
+                      class="iconBlack"
+                    />
+                    <img
+                      src="asset/img/share-clock-blue.png"
+                      alt="History"
+                      class="iconBlue"
+                    />
+                  </span>
+                  <span class="txt">History</span>
+                </a>
+              </li>
+              <li>
+                <a href="./admin">
+                  <span class="icon"
+                    ><img src="asset/img/logout.png" alt="LogOut"
+                  /></span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <!-- container -->
+      </header>
+
+      <main class="site-main">
+        <section class="user-backup-sec">
+          <div class="container-fluid">
+            <div
+              class="user-backup-table-wrapp pt-5"
+              style="margin-left: 100px"
+            >
+              <table class="custom-table">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Date & Time</th>
+                    <th>Name</th>
+                    <th>Friend's Name</th>
+                    <th>Email</th>
+                    <th>Phone No.</th>
+                  </tr>
+                </thead>
+                <tbody id="dataRows"></tbody>
+              </table>
+            </div>
+          </div>
+          <!-- container -->
+        </section>
+        <!-- common-sec -->
+      </main>
+    </section>
+    <!-- wrapper -->
+
+    <div style="display: none" id="loading">
+      <div class="spinner">
+        <div class="rect1"></div>
+        <div class="rect2"></div>
+        <div class="rect3"></div>
+        <div class="rect4"></div>
+        <div class="rect5"></div>
+      </div>
+    </div>
+  </body>
+</html>
