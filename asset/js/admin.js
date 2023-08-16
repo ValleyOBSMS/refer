@@ -106,7 +106,7 @@ function adminHomeLoad(data) {
     return false;
   });
 
-  clearAllBtn.onclick = (e) => {
+  clearAllBtn.addEventListener("click", (e) => {
     clearAllBtn.innerText = "Processing..";
     loading.style.display = "block";
 
@@ -149,7 +149,7 @@ function adminHomeLoad(data) {
       .catch((err) => {
         console.log(err);
       });
-  };
+  });
 }
 
 function loginLoad() {
