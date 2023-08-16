@@ -1,4 +1,4 @@
-const url = "https://us-central1-sms-vob.cloudfunctions.net/refer";
+const url = "https://script.google.com/macros/s/AKfycbxzvHHWjPhZTXw2ggneh7n2WHrNA_2onGcX0gOIP-o0jFAMrVSLNFy4kTRdQ6K8TnfxQw/exec";
 let password = "";
 
 function setCaretPosition(e, pos) {
@@ -85,9 +85,6 @@ function userHomeLoad() {
       fetch(url, {
         method: "POST",
         body: JSON.stringify(reqBody),
-        headers: {
-          "Content-Type": "application/json",
-        },
       })
         .then((res) => res.json())
         .then((data) => {
@@ -136,9 +133,6 @@ function loginLoad() {
     fetch(url, {
       method: "POST",
       body: JSON.stringify(reqBody),
-      headers: {
-        "Content-Type": "application/json",
-      },
     })
       .then((res) => res.json())
       .then((data) => {
