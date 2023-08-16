@@ -1,4 +1,5 @@
-const url = "https://script.google.com/macros/s/AKfycbxzvHHWjPhZTXw2ggneh7n2WHrNA_2onGcX0gOIP-o0jFAMrVSLNFy4kTRdQ6K8TnfxQw/exec";
+const url =
+  "https://script.google.com/macros/s/AKfycbxzvHHWjPhZTXw2ggneh7n2WHrNA_2onGcX0gOIP-o0jFAMrVSLNFy4kTRdQ6K8TnfxQw/exec";
 let password = "";
 let username = "";
 let token = "";
@@ -54,6 +55,7 @@ function loadHistory(data = []) {
 function adminHomeLoad(data) {
   let form = document.forms["searchForm"];
   let loading = document.getElementById("loading");
+  let clearAllBtn = document.getElementById("clearAllBtn");
 
   loadHistory(data);
 
@@ -103,6 +105,51 @@ function adminHomeLoad(data) {
 
     return false;
   });
+
+  clearAllBtn.onclick = (e) => {
+    clearAllBtn.innerText = "Processing..";
+    loading.style.display = "block";
+
+    /** fetch history */
+    let reqBody = {
+      action: "clearAll",
+      payload: {
+        password,
+        username,
+        token,
+      },
+    };
+
+    fetch(url, {
+      method: "POST",
+      body: JSON.stringify(reqBody),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.message === "success") {
+          loading.style.display = "none";
+          clearAllBtn.innerText = "Clear History";
+          loadHistory(
+            data.data.filter(({ name, friendName, email }) => {
+              return (
+                String(name)
+                  .toLowerCase()
+                  .indexOf(serarchValue.toLowerCase()) >= 0 ||
+                String(friendName)
+                  .toLowerCase()
+                  .indexOf(serarchValue.toLowerCase()) >= 0 ||
+                String(email)
+                  .toLowerCase()
+                  .indexOf(serarchValue.toLowerCase()) >= 0
+              );
+            })
+          );
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 }
 
 function loginLoad() {
